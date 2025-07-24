@@ -43,7 +43,7 @@ export default function PagarPedidoPage() {
   // Si el pago está completo, mostrar pantalla de confirmación
   if (isComplete) {
     return (
-      <main className="min-h-screen bg-gray-50">
+      <main className="min-h-screen bg-gray-50 dark:bg-dark_primary">
         <Header />
 
         <div className="max-w-md mx-auto px-4 py-16">
@@ -69,19 +69,19 @@ export default function PagarPedidoPage() {
 
   return (
     <ProtectedRoute>
-      <main className="min-h-screen bg-gray-50">
+      <main className="min-h-screen bg-gray-50 dark:bg-dark_primary">
         <Header />
 
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="flex items-center mb-8">
-            <Link href="/confirmar-pedido" className="text-gray-600 hover:text-gray-900 flex items-center mr-4">
+            <Link href="/confirmar-pedido" className="text-gray-600 dark:text-slate-50 hover:text-gray-900 flex items-center mr-4">
               <ArrowLeft className="h-5 w-5 mr-1" />
               <span>Volver</span>
             </Link>
-            <h1 className="text-3xl font-bold text-gray-900">Pagar Pedido</h1>
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-slate-50">Pagar Pedido</h1>
           </div>
 
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
+          <div className="bg-white dark:bg-slate-800 rounded-lg shadow-md overflow-hidden">
             <div className="p-6 border-b">
               <h2 className="text-xl font-semibold">Método de pago</h2>
             </div>
@@ -118,7 +118,7 @@ export default function PagarPedidoPage() {
                 {paymentMethod === "card" ? (
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                      <label htmlFor="cardName" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label htmlFor="cardName" className="block text-sm font-medium text-gray-700 dark:text-slate-50 mb-1">
                         Nombre en la tarjeta
                       </label>
                       <input
@@ -130,7 +130,7 @@ export default function PagarPedidoPage() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="cardNumber" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label htmlFor="cardNumber" className="block text-sm font-medium text-gray-700 dark:text-slate-50 mb-1">
                         Número de tarjeta
                       </label>
                       <input
@@ -143,7 +143,7 @@ export default function PagarPedidoPage() {
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="expDate" className="block text-sm font-medium text-gray-700 mb-1">
+                        <label htmlFor="expDate" className="block text-sm font-medium text-gray-700 dark:text-slate-50 mb-1">
                           Fecha de expiración
                         </label>
                         <input
