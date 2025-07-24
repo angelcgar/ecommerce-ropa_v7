@@ -18,23 +18,23 @@ export default function ConfirmarPedidoPage() {
 
   return (
     <ProtectedRoute>
-      <main className="min-h-screen bg-gray-50">
+      <main className="min-h-screen bg-gray-50 dark:bg-dark_primary">
         <Header />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="flex items-center mb-8">
-            <Link href="/orden" className="text-gray-600 hover:text-gray-900 flex items-center mr-4">
+            <Link href="/orden" className="text-gray-600 dark:text-slate-50 hover:text-gray-900 flex items-center mr-4">
               <ArrowLeft className="h-5 w-5 mr-1" />
               <span>Volver</span>
             </Link>
-            <h1 className="text-3xl font-bold text-gray-900">Confirmar Pedido</h1>
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-slate-50">Confirmar Pedido</h1>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Información del pedido */}
             <div className="md:col-span-2 space-y-6">
               {/* Dirección de envío */}
-              <div className="bg-white rounded-lg shadow-md p-6">
+              <div className="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6">
                 <div className="flex justify-between items-center mb-4">
                   <div className="flex items-center">
                     <MapPin className="h-5 w-5 text-gray-500 mr-2" />
@@ -54,7 +54,7 @@ export default function ConfirmarPedidoPage() {
                     {user.telefono && <p className="mt-2">Teléfono: {user.telefono}</p>}
                   </div>
                 ) : (
-                  <div className="bg-yellow-50 p-4 rounded-md text-yellow-800">
+                  <div className="bg-yellow-50 dark:bg-slate-800 dark:text-slate-50 p-4 rounded-md text-yellow-800">
                     <p>No has añadido una dirección de envío.</p>
                     <button className="text-sm font-medium underline mt-1">Añadir dirección</button>
                   </div>
@@ -62,7 +62,7 @@ export default function ConfirmarPedidoPage() {
               </div>
 
               {/* Método de pago */}
-              <div className="bg-white rounded-lg shadow-md p-6">
+              <div className="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6">
                 <div className="flex justify-between items-center mb-4">
                   <div className="flex items-center">
                     <CreditCard className="h-5 w-5 text-gray-500 mr-2" />
@@ -79,7 +79,7 @@ export default function ConfirmarPedidoPage() {
                     </p>
                   </div>
                 ) : (
-                  <div className="bg-yellow-50 p-4 rounded-md text-yellow-800">
+                  <div className="bg-yellow-50 dark:bg-slate-800 dark:text-slate-50 p-4 rounded-md text-yellow-800">
                     <p>No has añadido un método de pago.</p>
                     <button className="text-sm font-medium underline mt-1">Añadir método de pago</button>
                   </div>
@@ -87,7 +87,7 @@ export default function ConfirmarPedidoPage() {
               </div>
 
               {/* Productos */}
-              <div className="bg-white rounded-lg shadow-md p-6">
+              <div className="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6">
                 <h2 className="text-xl font-semibold mb-4">Productos ({items.length})</h2>
 
                 <div className="space-y-4">
@@ -117,20 +117,20 @@ export default function ConfirmarPedidoPage() {
 
             {/* Resumen del pedido */}
             <div className="md:col-span-1">
-              <div className="bg-white rounded-lg shadow-md p-6 sticky top-20">
+              <div className="bg-white dark:bg-dark_primary rounded-lg shadow-md p-6 sticky top-20">
                 <h2 className="text-xl font-semibold mb-4">Resumen</h2>
 
                 <div className="space-y-3 mb-6">
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Subtotal</span>
+                    <span className="text-gray-600 dark:text-slate-50">Subtotal</span>
                     <span>${subtotal.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Envío</span>
+                    <span className="text-gray-600 dark:text-slate-50">Envío</span>
                     <span>Gratis</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Impuestos (21%)</span>
+                    <span className="text-gray-600 dark:text-slate-50">Impuestos (21%)</span>
                     <span>${impuestos.toFixed(2)}</span>
                   </div>
                   <div className="border-t pt-3 mt-3 flex justify-between font-semibold">
