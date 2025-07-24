@@ -65,7 +65,7 @@ export default function Header({ onSearchResults, onClearSearch }: HeaderProps) 
   }
 
   return (
-    <header className="bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-50 transition-colors">
+    <header className="bg-white dark:bg-dark_primary shadow-sm sticky top-0 z-50 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -121,8 +121,9 @@ export default function Header({ onSearchResults, onClearSearch }: HeaderProps) 
             {/* Toggle de tema */}
             <ThemeToggle />
 
+            {/* TODO: Implementar las notificaciones correctamente */}
             {/* Notificaciones */}
-            <NotificationBell />
+            {/* <NotificationBell /> */}
 
             {/* Usuario */}
             {isAuthenticated ? (
