@@ -25,7 +25,7 @@ export default function ProductCard({ producto }: ProductCardProps) {
   return (
     <div className="group relative">
       <Link href={`/producto/${producto.id}`}>
-        <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
           <div className="relative h-64 w-full">
             <Image src={producto.imagen || "/placeholder.svg"} alt={producto.nombre} fill className="object-cover" />
             {/* Botón de wishlist */}
@@ -41,12 +41,12 @@ export default function ProductCard({ producto }: ProductCardProps) {
             </button>
           </div>
           <div className="p-4">
-            <h2 className="text-lg font-medium text-gray-900 group-hover:text-gray-600 transition-colors">
+            <h2 className="text-lg font-medium text-gray-900 dark:text-gray-50 group-hover:text-gray-500 transition-colors">
               {producto.nombre}
             </h2>
             <div className="flex justify-between items-center mt-2">
-              <p className="text-xl font-semibold text-gray-700">${producto.precio.toFixed(2)}</p>
-              <span className="text-sm text-gray-500">{producto.categoria}</span>
+              <p className="text-xl font-semibold text-gray-700 dark:text-gray-50">${producto.precio.toFixed(2)}</p>
+              <span className="text-sm text-gray-500 dark:text-gray-50">{producto.categoria}</span>
             </div>
           </div>
         </div>
