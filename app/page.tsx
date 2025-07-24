@@ -148,10 +148,11 @@ export default function Home() {
           </div>
         )}
 
+        {/* TODO: Pasar este código a la pagina /search:slug */}
         {/* Filtros - Solo mostrar si hay búsqueda activa o productos filtrados */}
-        {(isSearchActive || productosFiltrados.length > 0) && (
+        {/* {(isSearchActive || productosFiltrados.length > 0) && (
           <ProductFilters onFiltersChange={handleFiltersChange} initialFilters={filters} />
-        )}
+        )} */}
 
         {/* Grid de productos */}
         {productosFiltrados.length > 0 ? (
