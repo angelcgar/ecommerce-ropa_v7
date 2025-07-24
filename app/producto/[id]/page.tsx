@@ -32,16 +32,16 @@ export default function ProductoDetalle({ params }: { params: { id: string } }) 
   }
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-gray-50 dark:bg-dark_primary">
       <Header />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <Link href="/" className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-8">
+        <Link href="/" className="inline-flex items-center text-gray-600 dark:text-slate-50 hover:text-gray-900 dark:hover:text-slate-100 mb-8">
           <ArrowLeft className="h-5 w-5 mr-2" />
           Volver a la tienda
         </Link>
 
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
           <div className="md:flex">
             <div className="md:flex-shrink-0 md:w-1/2">
               <div className="relative h-96 md:h-full w-full">
@@ -57,18 +57,18 @@ export default function ProductoDetalle({ params }: { params: { id: string } }) 
 
             <div className="p-8 md:w-1/2">
               <div className="flex justify-between">
-                <h1 className="text-3xl font-bold text-gray-900 mb-4">{producto.nombre}</h1>
-                <span className="text-sm text-gray-500">{producto.categoria}</span>
+                <h1 className="text-3xl font-bold text-gray-900 dark:text-slate-50 mb-4">{producto.nombre}</h1>
+                <span className="text-sm text-gray-500 dark:text-slate-50">{producto.categoria}</span>
               </div>
 
-              <p className="text-2xl font-semibold text-gray-700 mb-6">${precioTalla.toFixed(2)}</p>
+              <p className="text-2xl font-semibold text-gray-700 dark:text-slate-50 mb-6">${precioTalla.toFixed(2)}</p>
 
               <div className="prose prose-gray mb-8">
                 <p>{producto.descripcion}</p>
               </div>
 
               <div className="mb-6">
-                <h3 className="text-sm font-medium text-gray-900 mb-2">Tallas disponibles</h3>
+                <h3 className="text-sm font-medium text-gray-900 dark:text-slate-50 mb-2">Tallas disponibles</h3>
                 <div className="flex flex-wrap gap-2">
                   {producto.tallas.map((talla) => (
                     <button
@@ -79,7 +79,7 @@ export default function ProductoDetalle({ params }: { params: { id: string } }) 
                         ${
                           tallaSeleccionada === talla.nombre && talla.disponible
                             ? "bg-gray-900 text-white border-gray-900"
-                            : "border-gray-300 text-gray-700 hover:bg-gray-50"
+                            : "border-gray-300 text-gray-700 dark:text-slate-50 hover:bg-gray-50 dark:hover:bg-gray-500 hover:text-gray-900"
                         }
                       `}
                       onClick={() => talla.disponible && setTallaSeleccionada(talla.nombre)}
@@ -94,7 +94,7 @@ export default function ProductoDetalle({ params }: { params: { id: string } }) 
               <button
                 className={`w-full py-3 px-6 rounded-md font-medium transition-colors ${
                   tallaSeleccionada
-                    ? "bg-gray-900 text-white hover:bg-gray-800"
+                    ? "bg-gray-900 text-white hover:bg-gray-700"
                     : "bg-gray-300 text-gray-500 cursor-not-allowed"
                 }`}
                 onClick={handleAddToCart}
