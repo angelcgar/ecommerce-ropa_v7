@@ -2,13 +2,13 @@
 
 import { useState, useRef, useEffect } from "react"
 import { Bell, X, Eye, Trash2, Gift, Heart, TrendingDown, Package, Info } from "lucide-react"
-import { useNotifications } from "@/context/NotificationContext"
+// import { useNotifications } from "@/context/NotificationContext"
 import Link from "next/link"
 
 export default function NotificationBell() {
   const [isOpen, setIsOpen] = useState(false)
-  const { notifications, unreadCount, markAsRead, markAllAsRead, removeNotification, clearAllNotifications } =
-    useNotifications()
+  // const { notifications, unreadCount, markAsRead, markAllAsRead, removeNotification, clearAllNotifications } =
+  //   useNotifications()
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   // Cerrar dropdown al hacer clic fuera
@@ -70,18 +70,18 @@ export default function NotificationBell() {
         className="relative text-gray-600 hover:text-gray-900 transition-colors"
       >
         <Bell className="h-6 w-6" />
-        {unreadCount > 0 && (
+        {/* {unreadCount > 0 && (
           <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center animate-pulse">
             {unreadCount > 99 ? "99+" : unreadCount}
           </span>
-        )}
+        )} */}
       </button>
 
       {isOpen && (
         <div className="absolute right-0 mt-2 w-96 bg-white rounded-lg shadow-lg border border-gray-200 z-50 max-h-96 overflow-hidden">
           {/* Header */}
           <div className="p-4 border-b border-gray-200 flex justify-between items-center">
-            <h3 className="text-lg font-semibold text-gray-900">
+            {/* <h3 className="text-lg font-semibold text-gray-900">
               Notificaciones {unreadCount > 0 && <span className="text-red-500">({unreadCount})</span>}
             </h3>
             <div className="flex space-x-2">
@@ -103,12 +103,12 @@ export default function NotificationBell() {
                   <Trash2 className="h-4 w-4" />
                 </button>
               )}
-            </div>
+            </div> */}
           </div>
 
           {/* Lista de notificaciones */}
           <div className="max-h-80 overflow-y-auto">
-            {notifications.length === 0 ? (
+            {/* {notifications.length === 0 ? (
               <div className="p-8 text-center text-gray-500">
                 <Bell className="h-12 w-12 text-gray-300 mx-auto mb-3" />
                 <p>No tienes notificaciones</p>
@@ -174,11 +174,11 @@ export default function NotificationBell() {
                   </div>
                 </div>
               ))
-            )}
+            )} */}
           </div>
 
           {/* Footer */}
-          {notifications.length > 0 && (
+          {/* {notifications.length > 0 && (
             <div className="p-3 border-t border-gray-200 bg-gray-50">
               <Link
                 href="/notificaciones"
@@ -188,7 +188,7 @@ export default function NotificationBell() {
                 Ver todas las notificaciones
               </Link>
             </div>
-          )}
+          )} */}
         </div>
       )}
     </div>

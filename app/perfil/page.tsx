@@ -4,7 +4,7 @@ import Header from "@/components/Header"
 import NotificationSettings from "@/components/NotificationSettings"
 import { useAuth } from "@/context/AuthContext"
 import { useCart } from "@/context/CartContext"
-import { useNotifications } from "@/context/NotificationContext"
+// import { useNotifications } from "@/context/NotificationContext"
 import { User, MapPin, Mail, Phone, Package, CreditCard, LogOut, Bell } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
@@ -12,7 +12,7 @@ import { useState } from "react"
 export default function PerfilUsuario() {
   const { user, logout, isAuthenticated } = useAuth()
   const { totalItems } = useCart()
-  const { unreadCount } = useNotifications()
+  // const { unreadCount } = useNotifications()
   const [activeTab, setActiveTab] = useState<"perfil" | "notificaciones">("perfil")
 
   // Si el usuario no está autenticado, mostrar mensaje
@@ -75,13 +75,6 @@ export default function PerfilUsuario() {
                     : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
                 }`}
               >
-                <Bell className="h-4 w-4 mr-2" />
-                Notificaciones
-                {unreadCount > 0 && (
-                  <span className="ml-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                    {unreadCount}
-                  </span>
-                )}
               </button>
             </nav>
           </div>
@@ -183,7 +176,6 @@ export default function PerfilUsuario() {
                       <Bell className="h-8 w-8 text-gray-500 mr-3" />
                       <div>
                         <p className="text-sm text-gray-500">Notificaciones sin leer</p>
-                        <p className="text-xl font-semibold">{unreadCount}</p>
                       </div>
                     </div>
                   </div>

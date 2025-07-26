@@ -5,7 +5,7 @@ import "./globals.css"
 import { CartProvider } from "@/context/CartContext"
 import { AuthProvider } from "@/context/AuthContext"
 import { WishlistProvider } from "@/context/WishlistContext"
-import { NotificationProvider } from "@/context/NotificationContext"
+// import { NotificationProvider } from "@/context/NotificationContext"
 import { ThemeProvider } from "@/context/ThemeContext"
 import NotificationToast from "@/components/NotificationToast"
 
@@ -28,12 +28,10 @@ export default function RootLayout({
         <ThemeProvider>
           <AuthProvider>
             <WishlistProvider>
-              <NotificationProvider>
                 <CartProvider>
                   {children}
                   <NotificationToast />
                 </CartProvider>
-              </NotificationProvider>
             </WishlistProvider>
           </AuthProvider>
         </ThemeProvider>
